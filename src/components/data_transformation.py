@@ -65,7 +65,7 @@ class DataTransformation:
             logging.info('Pipeline Completed')
 
         except Exception as e:
-            logging.info("Error in Data Trnasformation")
+            logging.info("Error in Data Transformation")
             raise CustomException(e,sys)
         
     def initiate_data_transformation(self,train_path,test_path):
@@ -91,7 +91,7 @@ class DataTransformation:
             input_feature_test_df=test_df.drop(columns=drop_columns,axis=1)
             target_feature_test_df=test_df[target_column_name]
             
-            ## Trnasformating using preprocessor obj
+            ## Transformating using preprocessor obj
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
             input_feature_test_arr=preprocessing_obj.transform(input_feature_test_df)
 
